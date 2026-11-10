@@ -31,6 +31,11 @@ body {
   color: var(--texto);
   font-family: "Segoe UI", system-ui, sans-serif; /* fonte limpa; se não existir, usa a próxima */
   line-height: 1.6;                      /* espaço entre linhas: facilita a leitura */
+
+  /* Marca d'água de brinquedos no fundo da página.
+     A imagem é um quadradinho que se repete pela página toda, como azulejos. */
+  background-image: url("imagens/fundo-brinquedos.svg");
+  background-size: 400px;                /* tamanho de cada "azulejo" */
 }
 
 /* Títulos com fonte serifada (com "pezinhos"): passa um ar delicado e elegante */
@@ -391,6 +396,38 @@ article h3 {
 }
 
 /* ----- PARA SABER MAIS ----- */
+
+/* Esta seção ocupa a largura inteira da tela, de ponta a ponta,
+   como uma faixa branca antes do rodapé. */
+#leituras {
+  max-width: none;                       /* tira o limite de largura que as outras seções têm */
+  background-color: var(--branco);       /* faixa branca: mostra que ela vai de uma borda à outra */
+  font-size: 0.85rem;                    /* letras menores que no resto do site */
+  padding: 2rem 3rem;                    /* menos espaço em cima e embaixo; um respiro nas laterais */
+
+  /* Divide o texto em colunas, como num jornal, para preencher a largura toda.
+     "3 260px" = no máximo 3 colunas, cada uma com pelo menos 260px de largura.
+     Em telas menores cabem menos colunas; no celular fica só 1. */
+  columns: 3 260px;
+  column-gap: 3rem;                      /* espaço entre as colunas */
+}
+
+/* O título "Para saber mais" passa por cima das colunas, ocupando a largura toda */
+#leituras h2 {
+  column-span: all;
+}
+
+/* Um subtítulo nunca fica sozinho no pé de uma coluna, separado da sua lista */
+#leituras h3 {
+  break-after: avoid;
+}
+
+/* Um item da lista nunca é cortado ao meio, metade numa coluna e metade na outra */
+#leituras li,
+#leituras .fonte {
+  break-inside: avoid;
+}
+
 #leituras li {
   margin-bottom: 0.8rem;
 }

@@ -1,0 +1,55 @@
+<!-- Fundo do site: silhuetas de brinquedos não estruturados, como uma marca d'água.
+     Este quadrado (400 x 400) se repete pelo fundo todo, como um azulejo.
+     Para mudar a cor dos desenhos, troque o valor de fill e stroke na linha do <g> abaixo
+     (por exemplo, #ffffff para branco). -->
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+
+  <!-- <g> é um "grupo": tudo o que está dentro dele usa a mesma cor.
+       fill = cor de dentro das formas; stroke = cor das linhas (usada na argola). -->
+  <g fill="#ece2d3" stroke="#ece2d3">
+
+    <!-- Argola de madeira: um círculo só com a borda grossa (fill="none" = sem cor dentro) -->
+    <circle cx="70" cy="70" r="26" fill="none" stroke-width="10"/>
+
+    <!-- Colher de pau: uma oval (a concha da colher) e um retângulo comprido (o cabo).
+         translate muda o desenho de lugar; rotate deixa ele inclinado. -->
+    <g transform="translate(300 55) rotate(40)" stroke="none">
+      <ellipse cx="0" cy="0" rx="15" ry="22"/>
+      <rect x="-4" y="18" width="8" height="70" rx="4"/>
+    </g>
+
+    <!-- Carretel de madeira: duas abas (em cima e embaixo) e o meio -->
+    <g transform="translate(190 195) rotate(-20)" stroke="none">
+      <rect x="-24" y="-32" width="48" height="9" rx="3"/>
+      <rect x="-24" y="23" width="48" height="9" rx="3"/>
+      <rect x="-14" y="-25" width="28" height="50"/>
+    </g>
+
+    <!-- Pedrinhas (seixos): três ovais de tamanhos diferentes -->
+    <g transform="translate(320 250)" stroke="none">
+      <ellipse cx="0" cy="0" rx="22" ry="14"/>
+      <ellipse cx="32" cy="18" rx="14" ry="10"/>
+      <ellipse cx="-6" cy="28" rx="11" ry="8"/>
+    </g>
+
+    <!-- Bolota (o fruto do carvalho): o corpo, o "chapeuzinho" e o cabinho -->
+    <g transform="translate(80 300) rotate(15)" stroke="none">
+      <ellipse cx="0" cy="10" rx="16" ry="20"/>
+      <path d="M-20 -2 Q0 -26 20 -2 Z"/>
+      <rect x="-2" y="-24" width="4" height="10" rx="2"/>
+    </g>
+
+    <!-- Concha: um leque e uma basezinha embaixo -->
+    <g transform="translate(250 335) rotate(-10)" stroke="none">
+      <path d="M0 26 L-30 -8 Q-22 -32 0 -32 Q22 -32 30 -8 Z"/>
+      <path d="M-8 24 H8 L12 32 H-12 Z"/>
+    </g>
+
+    <!-- Bloco de madeira: um quadrado inclinado -->
+    <rect x="-15" y="-15" width="30" height="30" rx="3" stroke="none"
+          transform="translate(40 185) rotate(20)"/>
+
+    <!-- Argola pequena -->
+    <circle cx="160" cy="80" r="13" fill="none" stroke-width="6"/>
+  </g>
+</svg>
