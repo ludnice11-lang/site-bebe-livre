@@ -165,31 +165,24 @@ section {
 
 /* ----- CARTÕES (article) ----- */
 
-/* As seções que têm cartões viram uma "grade" (grid).
-   auto-fit + minmax: cabem quantos cartões couberem, cada um com no mínimo 220px.
-   Assim, no celular fica 1 por linha e no computador ficam vários lado a lado. */
+/* Os cartões das abordagens e das fases ficam arrumados em "grade",
+   como as casinhas de uma tabela.
+   No computador são 4 cartões lado a lado, todos da mesma largura. */
 #abordagens,
 #fases {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(4, 1fr);  /* 4 colunas iguais */
+  gap: 1.5rem;                            /* espaço entre os cartões */
 }
 
-/* O título e os parágrafos soltos da seção ocupam a linha inteira da grade.
-   O sinal > quer dizer "filho direto": só os <p> que estão soltos na seção,
-   e não os <p> que estão dentro dos cartões. */
+/* O título e o texto de introdução não são cartões:
+   eles ocupam a linha inteira, de ponta a ponta.
+   "#fases > p" pega só o texto solto da seção, e não os textos de dentro dos cartões. */
 #abordagens h2,
 #fases h2,
 #fases > p {
   grid-column: 1 / -1;
   margin-bottom: 0;
-}
-
-/* As fases e as abordagens são sempre 4: então fixamos 4 colunas do mesmo tamanho, uma ao lado da outra.
-   repeat(4, 1fr) = "repita 4 vezes uma coluna de 1 fração", ou seja, 4 partes iguais. */
-#abordagens,
-#fases {
-  grid-template-columns: repeat(4, 1fr);
 }
 
 /* @media = "regra que só vale em certas condições".
@@ -334,6 +327,67 @@ article h3 {
   .curiosidade-conteudo {
     grid-template-columns: 1fr;
   }
+}
+
+/* ----- PERGUNTAS FREQUENTES ----- */
+
+/* Cada pergunta vira um cartãozinho branco */
+#perguntas details {
+  background-color: var(--branco);
+  border-radius: 16px;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1rem;                   /* espaço entre um cartão e outro */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+/* A pergunta (a parte que a gente clica) */
+#perguntas summary {
+  list-style: none;                      /* esconde a setinha que o navegador coloca sozinho */
+  display: flex;                         /* bolinha e pergunta lado a lado */
+  align-items: center;                   /* alinhadas pelo meio */
+  gap: 0.8rem;                           /* espaço entre a bolinha e a pergunta */
+  cursor: pointer;                       /* o mouse vira "mãozinha" */
+  font-weight: 600;
+  color: var(--salvia-escuro);
+}
+
+/* Esconde a setinha antiga também no Safari (o navegador da Apple) */
+#perguntas summary::-webkit-details-marker {
+  display: none;
+}
+
+/* A bolinha verde com a setinha.
+   ::before cria um "enfeite" antes do texto da pergunta, sem precisar mexer no HTML.
+   content é o que aparece dentro dele: aqui, o sinal › */
+#perguntas summary::before {
+  content: "›";
+  flex-shrink: 0;                        /* a bolinha nunca é apertada, mesmo se a pergunta for longa */
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;                    /* 50% = círculo */
+  background-color: var(--salvia-escuro);
+  color: var(--branco);
+  font-size: 1.4rem;
+  line-height: 1;
+  display: flex;                         /* estas 3 linhas centralizam a seta dentro da bolinha */
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s, background-color 0.3s; /* gira e muda de cor aos poucos */
+}
+
+/* Mouse por cima da pergunta: a bolinha fica cor de terracota, igual ao botão "voltar ao topo" */
+#perguntas summary:hover::before {
+  background-color: var(--terracota);
+}
+
+/* [open] = quando a pergunta está aberta. A seta gira e passa a apontar para baixo. */
+#perguntas details[open] summary::before {
+  transform: rotate(90deg);
+}
+
+/* A resposta: um espacinho em cima, para não ficar grudada na pergunta */
+#perguntas details p {
+  margin: 1rem 0 0;
 }
 
 /* ----- PARA SABER MAIS ----- */
