@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<!-- Avisa o navegador que este arquivo usa a versão moderna do HTML -->
+
+<!-- lang="pt" diz que o conteúdo está em português (ajuda leitores de tela e o Google) -->
+<html lang="pt">
+
+<head>
+  <!-- O <head> guarda informações SOBRE a página. Nada aqui aparece no corpo do site. -->
+
+  <!-- Permite acentos e caracteres especiais (ç, ã, é...) -->
+  <meta charset="UTF-8">
+
+  <!-- Faz o site se ajustar à largura da tela do celular -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Resumo do site que aparece no Google -->
+  <meta name="description" content="Desenvolvimento do bebê de 0 a 3 anos inspirado nas abordagens Pikler e Montessori: movimento livre, autonomia e cuidado respeitoso.">
+
+  <!-- Texto que aparece na aba do navegador -->
+  <title>Bebê Livre | Desenvolvimento de 0 a 3 anos</title>
+
+  <!-- Liga este HTML ao arquivo de estilo. Sem esta linha, o CSS não é usado! -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Ícone que aparece na aba do navegador (chamado "favicon") -->
+  <link rel="icon" type="image/png" href="imagens/logo.png">
+
+  <!-- Liga este HTML ao arquivo de JavaScript.
+       defer = "espere a página inteira carregar antes de rodar o script".
+       Assim o JavaScript consegue encontrar o botão, que fica lá no fim da página. -->
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <!-- O <body> é tudo o que aparece na tela -->
+
+  <!-- ===== CABEÇALHO: nome do site e menu ===== -->
+  <header>
+    <!-- Logotipo + nome do site.
+         alt="" (vazio) porque o nome "Bebê Livre" já está escrito ao lado:
+         assim o leitor de tela não lê o nome duas vezes. -->
+    <h1>
+      <img src="imagens/logo.png" alt="" class="logo">
+      Bebê Livre
+    </h1>
+
+    <!-- <nav> = área de navegação (o menu) -->
+    <nav>
+      <ul>
+        <!-- O "#" seguido de um nome leva até a parte da página com aquele id -->
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#texto">O olhar Pikler</a></li>
+        <li><a href="#abordagens">Abordagens</a></li>
+        <li><a href="#fases">Fases</a></li>
+        <li><a href="#dia-a-dia">No dia a dia</a></li>
+        <li><a href="#curiosidade">Curiosidade</a></li>
+        <li><a href="#leituras">Leituras</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===== CONTEÚDO PRINCIPAL ===== -->
+  <main>
+
+    <!-- Seção de boas-vindas. O id="inicio" é o "endereço" usado no menu. -->
+    <section id="inicio">
+      <h2>Confiar no bebê, respeitar o seu tempo</h2>
+      <p>
+        Desde que nasce, o bebê é capaz de aprender, se mover e descobrir o mundo por conta própria.
+        Nosso papel é oferecer segurança, afeto e um ambiente que deixe ele explorar livremente.
+      </p>
+
+      <!-- <img> mostra uma imagem. Ela não tem tag de fechamento.
+           src = onde está o arquivo da imagem
+           alt = descrição da imagem (lida por leitores de tela e mostrada se a imagem não carregar) -->
+      <img src="imagens/bebe-chao.jpg" alt="Bebê de macacão verde deitado de barriga para cima num tapete no chão, movimentando-se livremente">
+    </section>
+
+    <!-- Seção com o texto autoral sobre a abordagem Pikler.
+         Cada parágrafo do texto fica dentro de um par <p>...</p>. -->
+    <section id="texto">
+      <h2>A abordagem Pikler e o respeito pelo desenvolvimento do bebê</h2>
+
+      <p>Falar sobre a abordagem Pikler é, antes de tudo, falar sobre a forma como olhamos para o bebê. É reconhecer que, desde os primeiros meses de vida, ele é uma pessoa ativa, competente, curiosa e capaz de participar do próprio desenvolvimento. Em vez de antecipar conquistas ou conduzir constantemente suas experiências, essa perspectiva nos convida a oferecer tempo, espaço, segurança e relações de qualidade para que cada bebê possa descobrir o mundo a partir das suas próprias iniciativas.</p>
+
+      <p>Um dos princípios mais importantes dessa abordagem é o respeito pelo movimento livre. O bebê não precisa ser colocado em posições que ainda não conquistou sozinho, nem estimulado a alcançar etapas para as quais seu corpo ainda está se preparando. Quando encontra um ambiente seguro e adequado, ele pode experimentar seus movimentos livremente, percebendo aos poucos suas possibilidades, seus limites e suas próprias estratégias.</p>
+
+      <p>Esse processo tem um significado que vai muito além do desenvolvimento motor. Ao tentar alcançar um objeto, mudar de posição, deslocar-se ou encontrar uma nova maneira de realizar um movimento, o bebê vive pequenas experiências de iniciativa e conquista. Ele tenta, encontra dificuldades, reorganiza-se e tenta novamente. Assim, vai construindo não apenas novas habilidades, mas também uma importante sensação de competência.</p>
+
+      <p>É nesse cotidiano que começam a se formar as bases da autonomia e da autoconfiança. Autonomia, na primeira infância, não significa esperar que o bebê faça tudo sozinho ou que precise menos do adulto. Significa reconhecer suas capacidades e permitir que participe, dentro das suas possibilidades, daquilo que acontece com ele. O adulto continua sendo uma presença essencial: é quem oferece proteção, vínculo, previsibilidade e cuidado, mas também quem sabe observar e dar espaço quando a criança está envolvida em uma descoberta.</p>
+
+      <p>O brincar livre ocupa um lugar fundamental nesse processo. Para o bebê, brincar é uma forma de conhecer. Ao tocar, segurar, soltar, bater, empilhar, observar, repetir movimentos e explorar diferentes objetos, ele reúne informações sobre si mesmo e sobre o ambiente. Não é necessário transformar cada momento em uma atividade dirigida ou apresentar constantemente novos estímulos. Muitas vezes, materiais simples, um ambiente cuidadosamente preparado e tempo suficiente são tudo de que o bebê precisa para realizar investigações extremamente ricas.</p>
+
+      <p>A repetição, tão presente nas brincadeiras dos bebês, também tem valor. Aquilo que para o adulto pode parecer apenas o mesmo gesto realizado muitas vezes é, para a criança, uma oportunidade de experimentar novamente, perceber diferenças, aperfeiçoar movimentos e aprofundar uma descoberta. Quando respeitamos esse envolvimento sem interrompê-lo constantemente, respeitamos também sua capacidade de concentração e seu ritmo individual.</p>
+
+      <p>Na perspectiva Pikler, a qualidade da relação entre adulto e bebê é tão importante quanto a liberdade para explorar. Os momentos de cuidado, como alimentação, higiene, troca de roupa e colo, não são apenas tarefas da rotina. São momentos de encontro e comunicação. Quando o adulto conversa com o bebê, antecipa o que vai acontecer, espera suas respostas e permite sua participação, o cuidado deixa de ser algo simplesmente realizado sobre seu corpo e passa a ser uma experiência construída com ele.</p>
+
+      <p>Essa combinação entre vínculo seguro e liberdade para explorar é especialmente significativa. O bebê pode se aventurar pelo ambiente porque sabe que existe uma presença disponível e confiável. Pode experimentar suas próprias capacidades sem precisar enfrentar o mundo sozinho. A autonomia, portanto, não nasce do afastamento do adulto, mas de uma relação suficientemente segura para que a criança tenha confiança para, pouco a pouco, ampliar seu espaço de ação.</p>
+
+      <p>Talvez uma das contribuições mais importantes dessa forma de compreender a primeira infância seja justamente nos lembrar de que desenvolvimento não precisa significar pressa. Não precisamos antecipar etapas, ocupar todos os momentos ou transformar cada experiência em uma oportunidade de ensinar alguma coisa. O bebê já está aprendendo enquanto observa, movimenta-se, brinca, repete, participa dos cuidados e se relaciona com as pessoas ao seu redor.</p>
+
+      <p>Respeitar a infância também é confiar nesse tempo. É criar condições para que cada conquista tenha sentido porque foi vivida, experimentada e construída pela própria criança. É estar presente sem fazer por ela aquilo que, naquele momento, ela pode descobrir por si mesma.</p>
+
+      <p>Quando um bebê cresce sendo respeitado em seu ritmo, acolhido em suas necessidades e reconhecido em suas capacidades, oferecemos muito mais do que condições favoráveis ao seu desenvolvimento. Oferecemos as bases para que construa uma relação de confiança consigo mesmo, com o outro e com o mundo.</p>
+
+      <!-- class="destaque": a frase final ganha um visual especial no CSS, como um fechamento -->
+      <p class="destaque">E talvez seja justamente aí que esteja a essência desse olhar: não apressar a criança para aquilo que ela ainda será, mas reconhecer, respeitar e valorizar profundamente quem ela já é.</p>
+    </section>
+
+    <!-- Seção sobre as quatro abordagens: 4 cartões lado a lado -->
+    <section id="abordagens">
+      <h2>As abordagens que nos inspiram</h2>
+
+      <!-- Cada <article> é um cartão independente, com conteúdo próprio.
+           Dentro de cada um: nome (h3), período de vida (p.periodo), texto e a fonte oficial (p.fonte). -->
+      <article>
+        <h3>Emmi Pikler</h3>
+        <p class="periodo">Hungria · 1902–1984</p>
+        <p>
+          Pediatra que, em 1946, abriu uma casa para bebês na rua Lóczy, em Budapeste.
+          Valoriza o <strong>movimento livre</strong>, a atividade autônoma e o brincar livre,
+          com cuidados respeitosos e uma relação de qualidade entre adulto e bebê.
+        </p>
+        <p class="fonte">
+          Fonte: <a href="https://pikler.org/about/" target="_blank" rel="noopener">Pikler/Lóczy USA</a>
+        </p>
+      </article>
+
+      <article>
+        <h3>Maria Montessori</h3>
+        <p class="periodo">Itália · 1870–1952</p>
+        <p>
+          Médica e educadora. Propõe um <strong>ambiente preparado</strong> com cuidado,
+          no qual a criança conquista a independência aos poucos. O adulto observa com atenção
+          e favorece a ação da própria criança.
+        </p>
+        <p class="fonte">
+          Fonte: <a href="https://montessori-ami.org/about-montessori" target="_blank" rel="noopener">Association Montessori Internationale</a>
+        </p>
+      </article>
+
+      <article>
+        <h3>Loris Malaguzzi</h3>
+        <p class="periodo">Itália · 1920–1994 · Reggio Emilia</p>
+        <p>
+          Vê a <strong>criança potente e protagonista</strong>, um sujeito de direitos que aprende
+          nas relações e na investigação, por meio das "cem linguagens".
+          O ambiente também educa.
+        </p>
+        <p class="fonte">
+          Fonte: <a href="https://www.reggiochildren.it/en/reggio-emilia-approach/" target="_blank" rel="noopener">Reggio Children</a>
+        </p>
+      </article>
+
+      <article>
+        <h3>Friedrich Fröbel</h3>
+        <p class="periodo">Alemanha · 1782–1852</p>
+        <p>
+          Criador do jardim de infância (<em>kindergarten</em>). Coloca o <strong>brincar no centro</strong>,
+          com "liberdade com orientação", contato com a natureza, criatividade
+          e a criança aprendendo ao fazer por si mesma.
+        </p>
+        <p class="fonte">
+          Fonte: <a href="https://www.froebel.org.uk/about-us/froebelian-principles" target="_blank" rel="noopener">Froebel Trust</a>
+        </p>
+      </article>
+    </section>
+
+    <!-- Seção com as fases do desenvolvimento -->
+    <section id="fases">
+      <h2>Fases do desenvolvimento</h2>
+      <p>Cada bebê tem o seu ritmo. As idades abaixo são apenas uma referência.</p>
+
+      <article>
+        <h3>0 a 6 meses</h3>
+        <p>Descobre as próprias mãos, acompanha rostos e sons e começa a rolar. Deitado de costas num chão firme, se movimenta à vontade.</p>
+      </article>
+
+      <article>
+        <h3>6 a 12 meses</h3>
+        <p>Rasteja, engatinha e senta por conta própria. Pega, solta, morde e explora objetos de diferentes texturas.</p>
+      </article>
+
+      <article>
+        <h3>1 a 2 anos</h3>
+        <p>Fica em pé e dá os primeiros passos. Quer subir, carregar, encaixar e participar das tarefas da casa.</p>
+      </article>
+
+      <article>
+        <h3>2 a 3 anos</h3>
+        <p>A linguagem cresce rápido. Quer fazer sozinho: comer, se vestir, guardar os brinquedos.</p>
+      </article>
+    </section>
+
+    <!-- Seção com práticas para o dia a dia -->
+    <section id="dia-a-dia">
+      <h2>No dia a dia</h2>
+
+      <!-- <ul> = lista com marcadores. Cada <li> é um item. -->
+      <ul>
+        <!-- <strong> deixa a palavra em destaque (negrito) e diz que ela é importante -->
+        <li><strong>Chão livre:</strong> um tapete firme e seguro é o melhor lugar para o bebê se movimentar.</li>
+        <li><strong>Roupas confortáveis:</strong> que não atrapalhem os movimentos.</li>
+        <li><strong>Poucos objetos:</strong> simples e de materiais variados, como madeira, tecido e metal.</li>
+        <li><strong>Cuidado com atenção:</strong> antes de pegar o bebê no colo, avisar o que vai acontecer.</li>
+      </ul>
+    </section>
+
+    <!-- Seção de curiosidade: o lencinho da abordagem Pikler -->
+    <section id="curiosidade">
+      <!-- <span> é uma "etiqueta" pequena dentro do texto; aqui vira um selo escrito "Curiosidade" -->
+      <span class="selo">Curiosidade</span>
+      <h2>O lencinho vermelho de bolinhas brancas</h2>
+
+      <!-- <div> é uma "caixa" sem significado especial. Usamos para agrupar a foto e o texto
+           e colocá-los lado a lado no CSS. -->
+      <div class="curiosidade-conteudo">
+        <!-- Coluna da esquerda: as duas fotos, uma embaixo da outra -->
+        <div class="curiosidade-fotos">
+          <img src="imagens/lenco.jpg" alt="Cesto de palha sobre um tapete no chão, com objetos de metal, uma manta e um lencinho vermelho de bolinhas brancas">
+          <img src="imagens/lenco-tapete.jpg" alt="Lencinho vermelho de bolinhas brancas, levemente amassado, sobre um tapete claro no chão">
+        </div>
+
+        <div>
+          <p>
+            O lenço Pikler vermelho com bolinhas brancas é um dos materiais mais emblemáticos da abordagem de Emmi Pikler.
+            Leve, com cerca de 30 por 30 centímetros, ele está entre os primeiros objetos de exploração do bebê,
+            oferecido por volta do terceiro ou quarto mês de vida. (Antes disso, o primeiro brinquedo do bebê é a própria mão!)
+          </p>
+
+          <!-- Lista com os benefícios. <strong> destaca o nome de cada um. -->
+          <ul>
+            <li>
+              <strong>Contraste visual:</strong> o vermelho vivo com bolinhas brancas tem poucas cores,
+              ajuda a focar o olhar e atrai a atenção do bebê numa fase em que a visão ainda está se desenvolvendo.
+            </li>
+            <li>
+              <strong>Leveza:</strong> por ser um tecido muito leve, macio e maleável, o bebê consegue
+              segurá-lo, puxá-lo para perto e soltá-lo com facilidade.
+            </li>
+            <li>
+              <strong>Estímulo sensorial e autonomia:</strong> permite que o bebê explore texturas pelo tato,
+              teste movimentos livres com as mãos e coordene os primeiros alcances e preensões
+              de maneira autônoma e espontânea.
+            </li>
+          </ul>
+
+          <p>
+            O lencinho é colocado ao lado de um dos ombros do bebê, deitado de costas. Ninguém o entrega na mão:
+            é o próprio bebê que, aos poucos, se vira de lado para alcançá-lo. Um belo exemplo de
+            <strong>movimento livre</strong> e <strong>atividade autônoma</strong>.
+          </p>
+          <p><strong>Importante:</strong> o bebê deve brincar sempre com a supervisão de um adulto.</p>
+
+          <p class="fonte">
+            Fontes: SOARES, Suzana Macedo.
+            <a href="https://portal.sescsp.org.br/online/artigo/compartilhar/14061_COMO+BRINCAM+OS+BEBES" target="_blank" rel="noopener">Como brincam os bebês?</a>
+            Sesc São Paulo, 20 mar. 2020.
+            <a href="https://blog.companhiadasletras.com.br/procurando-ideias-de-brincadeiras-para-os-seus-pequenos-tente-os-tecidos/" target="_blank" rel="noopener">Procurando ideias de brincadeiras para os seus pequenos? Tente os tecidos!</a>
+            Blog da Companhia das Letras, 6 fev. 2020 (com fala da pediatra Isabelle Deligne).
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção com livros para quem quer se aprofundar -->
+    <section id="leituras">
+      <h2>Para saber mais</h2>
+      <!-- <h3> = subtítulo dentro da seção -->
+      <h3>Em português</h3>
+      <ul>
+        <!-- <cite> marca o título de uma obra (livro, filme...). O navegador costuma mostrar em itálico. -->
+        <li>FALK, Judit (org.). <cite>Educar os três primeiros anos: a experiência de Lóczy</cite>. Araraquara: Junqueira&amp;Marin, 2011.</li>
+        <li>FALK, Judit (org.). <cite>Abordagem Pikler: educação infantil</cite>. São Paulo: Omnisciência, 2016.</li>
+      </ul>
+      <!-- &amp; é o jeito "seguro" de escrever o símbolo & no HTML,
+           porque o & sozinho tem um significado especial para o navegador. -->
+
+      <h3>Obras de Emmi Pikler</h3>
+      <ul>
+        <li><cite>Mit tud már a baba?</cite> (húngaro, 1940): "O que o bebê já sabe fazer?", seu primeiro livro para as famílias.</li>
+        <li><cite>Se mouvoir en liberté dès le premier âge</cite> (francês, 1979) e <cite>Lasst mir Zeit</cite> (alemão, 1988): traduções do seu estudo sobre o desenvolvimento motor livre, publicado na Hungria em 1969.</li>
+        <li><cite>Friedliche Babys, zufriedene Mütter</cite> (alemão, 1982), publicado em inglês como <cite>Peaceful Babies – Contented Mothers</cite>.</li>
+      </ul>
+
+      <p class="fonte">
+        Datas das obras de Pikler conforme: TARDOS, Anna.
+        <a href="https://perspectives.waimh.org/2010/12/15/introducing-piklerian-developmental-approach-history-principles/" target="_blank" rel="noopener">Introducing the Piklerian developmental approach: history and principles</a>.
+        <cite>Perspectives in Infant Mental Health</cite>, WAIMH, 2010.
+      </p>
+
+      <h3>Instituições de referência</h3>
+      <ul>
+        <!-- <a> cria um link. O texto entre <a> e </a> é o que a pessoa clica. -->
+        <li>
+          <a href="https://pikler.hu/" target="_blank" rel="noopener">Instituto Pikler (Pikler-Ház)</a>, em Budapeste, Hungria:
+          a casa fundada por Emmi Pikler na rua Lóczy. O site é em húngaro, com cursos em inglês e espanhol.
+        </li>
+        <li>
+          <a href="https://pikler.hu/magyarorszagi-pikler-loczy-tarsasag" target="_blank" rel="noopener">Sociedade Pikler-Lóczy da Hungria</a>
+          (Magyarországi Pikler-Lóczy Társaság): detentora da marca Pikler®.
+        </li>
+        <li>
+          <a href="https://pikler.org/about/" target="_blank" rel="noopener">Pikler/Lóczy USA</a>:
+          organização de formação que se dedica a preservar a competência, a autonomia e a integridade da criança pequena,
+          por meio de relações respeitosas entre adulto e criança.
+        </li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- ===== RODAPÉ: sem dados pessoais, só uma frase sobre o projeto ===== -->
+  <footer>
+    <p>Projeto de estudo em HTML, CSS e JavaScript. Conteúdo informativo, não substitui a orientação de profissionais de saúde.</p>
+  </footer>
+
+  <!-- Botão "voltar ao topo". Começa escondido e aparece quando a pessoa rola a página.
+       id="botao-topo" é o "nome" que o JavaScript usa para encontrar este botão.
+       aria-label descreve o botão para leitores de tela, já que ele só mostra uma seta. -->
+  <button type="button" id="botao-topo" aria-label="Voltar ao topo">↑</button>
+
+</body>
+</html>

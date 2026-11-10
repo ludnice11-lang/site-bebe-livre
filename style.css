@@ -1,0 +1,389 @@
+/* =========================================================
+   ESTILO DO SITE "BEBÊ LIVRE"
+   Cores suaves e naturais: creme, verde-sálvia e terracota
+   ========================================================= */
+
+/* ----- VARIÁVEIS DE COR -----
+   :root é o "topo" da página. As variáveis (que começam com --)
+   guardam valores que usamos várias vezes. Se quiser trocar
+   uma cor no site inteiro, basta mudar aqui. */
+:root {
+  --creme: #fbf7f0;        /* fundo da página */
+  --branco: #ffffff;       /* fundo dos cartões */
+  --salvia: #7a9e7e;       /* verde suave: destaques */
+  --salvia-escuro: #5b7f60;/* verde mais forte: títulos e botão */
+  --terracota: #c98b6b;    /* cor de detalhe */
+  --texto: #3e3a36;        /* cor do texto (marrom bem escuro, mais suave que preto) */
+}
+
+/* ----- AJUSTES GERAIS ----- */
+
+/* O * seleciona TODOS os elementos.
+   box-sizing: border-box faz a largura incluir o espaço interno,
+   o que deixa as medidas mais fáceis de controlar. */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;                             /* tira a margem que o navegador coloca sozinho */
+  background-color: var(--creme);        /* var(--nome) usa uma variável */
+  color: var(--texto);
+  font-family: "Segoe UI", system-ui, sans-serif; /* fonte limpa; se não existir, usa a próxima */
+  line-height: 1.6;                      /* espaço entre linhas: facilita a leitura */
+}
+
+/* Títulos com fonte serifada (com "pezinhos"): passa um ar delicado e elegante */
+h1, h2, h3 {
+  font-family: Georgia, serif;
+  color: var(--salvia-escuro);
+  line-height: 1.2;
+}
+
+/* ----- CABEÇALHO ----- */
+/* O cabeçalho tem duas "faixas": o nome (em cima, fundo branco)
+   e o menu (embaixo, barra verde). Uma fica empilhada sobre a outra. */
+header {
+  background-color: var(--branco);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); /* sombra bem leve embaixo */
+}
+
+/* Faixa de cima: o nome do site, centralizado */
+header h1 {
+  margin: 0;
+  padding: 1rem 2rem;                    /* espaço interno: 1rem em cima/baixo, 2rem nos lados */
+  font-size: 2rem;
+  display: flex;                         /* logotipo e nome lado a lado */
+  justify-content: center;               /* os dois centralizados */
+  align-items: center;                   /* alinhados pelo meio, na vertical */
+  gap: 0.8rem;                           /* espaço entre o logotipo e o nome */
+}
+
+/* Tamanho do logotipo: só definimos a altura; a largura acompanha sozinha */
+.logo {
+  height: 80px;
+  width: auto;
+}
+
+/* Faixa de baixo: a barra verde do menu */
+nav {
+  background-color: var(--salvia-escuro);
+}
+
+/* Lista do menu: tira as bolinhas e coloca os itens lado a lado */
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0.6rem 1rem;
+  display: flex;                         /* flex coloca os itens lado a lado */
+  justify-content: center;               /* abas centralizadas na barra */
+  flex-wrap: wrap;                       /* se a tela for estreita, as abas descem para outra linha */
+  gap: 0.5rem;                           /* espaço entre as abas */
+}
+
+/* Cada aba do menu */
+nav a {
+  display: inline-block;                 /* permite dar espaço interno ao link */
+  padding: 0.4rem 1rem;
+  border-radius: 999px;                  /* formato de pílula */
+  color: var(--branco);
+  text-decoration: none;                 /* tira o sublinhado dos links */
+  font-weight: 600;                      /* letra um pouco mais grossa */
+}
+
+/* :hover = quando o mouse passa por cima.
+   rgba(255, 255, 255, 0.2) é branco com 20% de opacidade: um "clarão" suave na aba */
+nav a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* ----- SEÇÕES ----- */
+section {
+  max-width: 960px;                      /* largura máxima: o texto não fica esticado demais */
+  margin: 0 auto;                        /* "auto" nos lados centraliza a seção na tela */
+  padding: 3rem 2rem;
+}
+
+/* Seção de boas-vindas com mais destaque */
+#inicio {
+  text-align: center;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+#inicio h2 {
+  font-size: 2.2rem;
+}
+
+#inicio p {
+  font-size: 1.15rem;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+/* Imagem da boas-vindas */
+#inicio img {
+  display: block;
+  width: 100%;
+  max-width: 640px;          /* não fica maior que o texto */
+  height: auto;              /* mantém a proporção, sem esticar */
+  margin: 2rem auto 0;       /* espaço em cima e centralizada */
+  border-radius: 24px;       /* cantos bem arredondados, visual suave */
+}
+
+/* ----- TEXTO SOBRE A ABORDAGEM ----- */
+
+/* Texto longo fica mais fácil de ler numa coluna mais estreita (como num livro) */
+#texto {
+  max-width: 720px;
+}
+
+#texto h2 {
+  font-size: 1.9rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+#texto p {
+  font-size: 1.08rem;
+  margin-bottom: 1.3rem;
+  text-align: justify;                   /* justificado: texto reto dos dois lados, como num livro */
+  hyphens: auto;                         /* deixa o navegador separar palavras com hífen no fim da linha,
+                                            para não abrir "buracos" grandes entre as palavras */
+}
+
+/* A frase final: em itálico, maior, com uma linha cor de terracota na esquerda, como uma citação */
+#texto .destaque {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 1.3rem;
+  color: var(--salvia-escuro);
+  border-left: 4px solid var(--terracota);
+  padding-left: 1.2rem;
+  margin-top: 2.5rem;
+}
+
+/* ----- CARTÕES (article) ----- */
+
+/* As seções que têm cartões viram uma "grade" (grid).
+   auto-fit + minmax: cabem quantos cartões couberem, cada um com no mínimo 220px.
+   Assim, no celular fica 1 por linha e no computador ficam vários lado a lado. */
+#abordagens,
+#fases {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+/* O título e os parágrafos soltos da seção ocupam a linha inteira da grade.
+   O sinal > quer dizer "filho direto": só os <p> que estão soltos na seção,
+   e não os <p> que estão dentro dos cartões. */
+#abordagens h2,
+#fases h2,
+#fases > p {
+  grid-column: 1 / -1;
+  margin-bottom: 0;
+}
+
+/* As fases e as abordagens são sempre 4: então fixamos 4 colunas do mesmo tamanho, uma ao lado da outra.
+   repeat(4, 1fr) = "repita 4 vezes uma coluna de 1 fração", ou seja, 4 partes iguais. */
+#abordagens,
+#fases {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* @media = "regra que só vale em certas condições".
+   Aqui: se a tela tiver até 800px de largura (tablet), fica 2 cartões por linha (2 + 2). */
+@media (max-width: 800px) {
+  #abordagens,
+  #fases {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* E se a tela tiver até 480px (celular), fica 1 cartão por linha. */
+@media (max-width: 480px) {
+  #abordagens,
+  #fases {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Cartões das abordagens: a fonte fica sempre no pé do cartão.
+   display: flex + flex-direction: column empilha o conteúdo de cima para baixo;
+   margin-top: auto "empurra" a fonte para o fim do cartão,
+   assim as fontes dos 4 cartões ficam todas na mesma altura. */
+#abordagens article {
+  display: flex;
+  flex-direction: column;
+}
+
+#abordagens article .fonte {
+  margin-top: auto;
+  margin-bottom: 0;
+  padding-top: 0.8rem;
+}
+
+/* Linha com país e anos de vida, logo abaixo do nome */
+.periodo {
+  margin-top: -0.5rem;
+  font-size: 0.85rem;
+  color: var(--terracota);
+  font-weight: 600;
+}
+
+/* Texto da referência (fonte): menor e mais discreto */
+.fonte {
+  font-size: 0.85rem;
+  color: #6b655f;
+}
+
+.fonte a {
+  color: var(--salvia-escuro);
+}
+
+article {
+  background-color: var(--branco);
+  padding: 1.5rem;
+  border-radius: 16px;                   /* cantos arredondados: visual suave */
+  border-top: 4px solid var(--salvia);   /* faixinha verde no topo do cartão */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+article h3 {
+  margin-top: 0;
+}
+
+/* ----- LISTA "NO DIA A DIA" ----- */
+#dia-a-dia ul {
+  padding-left: 1.2rem;
+}
+
+#dia-a-dia li {
+  margin-bottom: 0.8rem;
+}
+
+/* ::marker é a bolinha da lista; aqui ela fica cor de terracota */
+#dia-a-dia li::marker {
+  color: var(--terracota);
+}
+
+/* ----- CURIOSIDADE: O LENCINHO ----- */
+#curiosidade {
+  background-color: var(--branco);
+  border-radius: 24px;
+  border: 2px dashed var(--terracota);   /* borda tracejada: lembra uma costura de tecido */
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* O selo "Curiosidade" */
+.selo {
+  display: inline-block;
+  background-color: #c0392b;             /* vermelho, combinando com o lencinho */
+  color: var(--branco);
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;             /* deixa o texto todo em letras maiúsculas */
+  letter-spacing: 0.08em;                /* espaço entre as letras */
+  padding: 0.3rem 0.9rem;
+  border-radius: 999px;
+}
+
+#curiosidade h2 {
+  margin-top: 0.8rem;
+}
+
+/* Foto e texto lado a lado: a foto ocupa 1 parte e o texto ocupa 2 partes */
+.curiosidade-conteudo {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+  align-items: start;                    /* foto e texto começam alinhados em cima */
+}
+
+/* Coluna das fotos: empilhadas de cima para baixo, com espaço entre elas */
+.curiosidade-fotos {
+  display: flex;
+  flex-direction: column;                /* column = uma embaixo da outra */
+  gap: 1rem;
+}
+
+.curiosidade-conteudo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+}
+
+.curiosidade-conteudo p {
+  margin-top: 0;
+}
+
+/* Espaço entre os itens da lista de benefícios e bolinha vermelha */
+.curiosidade-conteudo li {
+  margin-bottom: 0.6rem;
+}
+
+.curiosidade-conteudo li::marker {
+  color: #c0392b;                        /* bolinhas da lista em vermelho, como as do lencinho... ao contrário! */
+}
+
+/* No celular, a foto fica em cima e o texto embaixo */
+@media (max-width: 640px) {
+  .curiosidade-conteudo {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ----- PARA SABER MAIS ----- */
+#leituras li {
+  margin-bottom: 0.8rem;
+}
+
+/* Títulos dos livros em itálico e na cor de detalhe */
+cite {
+  font-style: italic;
+  color: var(--salvia-escuro);
+  font-weight: 600;
+}
+
+/* ----- BOTÃO VOLTAR AO TOPO ----- */
+#botao-topo {
+  position: fixed;                       /* fica parado na tela, mesmo quando a página rola */
+  right: 1.5rem;                         /* distância da borda direita */
+  bottom: 1.5rem;                        /* distância da borda de baixo */
+  width: 3rem;
+  height: 3rem;
+  border: none;
+  border-radius: 50%;                    /* 50% = círculo */
+  background-color: var(--salvia-escuro);
+  color: var(--branco);
+  font-size: 1.4rem;
+  cursor: pointer;                       /* o mouse vira "mãozinha" */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+  /* Começa invisível */
+  opacity: 0;                            /* 0 = transparente, 1 = totalmente visível */
+  visibility: hidden;                    /* escondido de verdade: não dá para clicar */
+  transition: opacity 0.3s, visibility 0.3s; /* aparece e some aos poucos, em 0,3 segundo */
+}
+
+/* Quando o JavaScript coloca a classe "visivel", o botão aparece */
+#botao-topo.visivel {
+  opacity: 1;
+  visibility: visible;
+}
+
+#botao-topo:hover {
+  background-color: var(--terracota);
+}
+
+/* ----- RODAPÉ ----- */
+footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.9rem;
+  background-color: var(--salvia);
+  color: var(--branco);
+}
