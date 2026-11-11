@@ -57,11 +57,13 @@ header {
 header h1 {
   margin: 0;
   padding: 1rem 2rem;                    /* espaço interno: 1rem em cima/baixo, 2rem nos lados */
-  font-size: 2rem;
-  display: flex;                         /* logotipo e nome lado a lado */
-  justify-content: center;               /* os dois centralizados */
-  align-items: center;                   /* alinhados pelo meio, na vertical */
-  gap: 0.8rem;                           /* espaço entre o logotipo e o nome */
+  font-size: 3.4rem;                     /* tamanho do nome "Bebê Livre" */
+  font-family: "Baloo 2", sans-serif;    /* letra redondinha (vem do Google Fonts, ligada no HTML) */
+  font-weight: 800;                      /* bem negrito: 400 é normal, 700 é negrito, 800 é mais ainda */
+  display: flex;
+  flex-direction: column;                /* logotipo em cima, nome embaixo */
+  align-items: center;                   /* os dois centralizados na tela */
+  gap: 0.2rem;                           /* espaço entre o logotipo e o nome */
 }
 
 /* Tamanho do logotipo: só definimos a altura; a largura acompanha sozinha */
@@ -122,6 +124,7 @@ section {
 
 #inicio p {
   font-size: 1.15rem;
+  font-weight: 700;                      /* texto em negrito */
   max-width: 640px;
   margin: 0 auto;
 }
@@ -136,11 +139,32 @@ section {
   border-radius: 24px;       /* cantos bem arredondados, visual suave */
 }
 
+/* ----- FOTOS COM LEGENDA ----- */
+
+/* O navegador coloca sozinho um espaço grande dos lados de cada <figure>.
+   Aqui tiramos esse espaço, para a foto continuar do tamanho de antes. */
+figure {
+  margin: 0;
+}
+
+/* A legenda embaixo das fotos: letra pequena, cinza e discreta */
+figcaption {
+  font-size: 0.75rem;
+  color: #6b655f;                        /* o mesmo cinza das fontes dos cartões */
+  margin-top: 0.4rem;                    /* espacinho entre a foto e a legenda */
+}
+
 /* ----- TEXTO SOBRE A ABORDAGEM ----- */
 
 /* Texto longo fica mais fácil de ler numa coluna mais estreita (como num livro) */
 #texto {
   max-width: 720px;
+
+  /* Caixa branca atrás do título e do texto, para destacar e facilitar a leitura */
+  background-color: var(--branco);
+  border-radius: 24px;                   /* cantos arredondados, como a caixa da curiosidade */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06); /* sombra bem leve, igual à dos cartões */
+  padding: 3rem;                         /* espaço entre a borda da caixa e o texto */
 }
 
 #texto h2 {
@@ -264,6 +288,50 @@ article h3 {
 /* ::marker é a bolinha da lista; aqui ela fica cor de terracota */
 #dia-a-dia li::marker {
   color: var(--terracota);
+}
+
+/* ----- BRINCAR LIVRE ----- */
+
+/* Foto e texto lado a lado: a foto ocupa 1 parte e o texto ocupa 2 partes */
+.brincar-conteudo {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+  align-items: start;                    /* foto e texto começam alinhados em cima */
+}
+
+/* Coluna das fotos: uma embaixo da outra, com espaço entre elas */
+.brincar-fotos {
+  display: flex;
+  flex-direction: column;                /* column = uma embaixo da outra */
+  gap: 1rem;
+}
+
+.brincar-conteudo img {
+  display: block;
+  width: 100%;
+  height: auto;                          /* mantém a proporção da foto, sem esticar */
+  border-radius: 16px;                   /* cantos arredondados, como as outras fotos */
+}
+
+.brincar-conteudo p {
+  margin-top: 0;
+}
+
+/* Espaço entre os itens da lista e bolinha cor de terracota */
+.brincar-conteudo li {
+  margin-bottom: 0.6rem;
+}
+
+.brincar-conteudo li::marker {
+  color: var(--terracota);
+}
+
+/* No celular, a foto fica em cima e o texto embaixo */
+@media (max-width: 640px) {
+  .brincar-conteudo {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ----- CURIOSIDADE: O LENCINHO ----- */

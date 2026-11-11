@@ -19,6 +19,12 @@
   <!-- Texto que aparece na aba do navegador -->
   <title>Bebê Livre | Desenvolvimento de 0 a 3 anos</title>
 
+  <!-- Busca a fonte "Baloo 2" (letra bem redondinha) no Google Fonts, um site de fontes gratuitas.
+       wght@800 = só a versão bem negrita. Usamos ela só no nome "Bebê Livre", lá no topo. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@800&display=swap">
+
   <!-- Liga este HTML ao arquivo de estilo. Sem esta linha, o CSS não é usado! -->
   <link rel="stylesheet" href="style.css">
 
@@ -53,6 +59,7 @@
         <li><a href="#abordagens">Abordagens</a></li>
         <li><a href="#fases">Fases</a></li>
         <li><a href="#dia-a-dia">No dia a dia</a></li>
+        <li><a href="#brincar-livre">Brincar livre</a></li>
         <li><a href="#curiosidade">Curiosidade</a></li>
         <li><a href="#perguntas">Perguntas</a></li>
         <li><a href="#leituras">Leituras</a></li>
@@ -71,10 +78,15 @@
         Nosso papel é oferecer segurança, afeto e um ambiente que deixe ele explorar livremente.
       </p>
 
-      <!-- <img> mostra uma imagem. Ela não tem tag de fechamento.
+      <!-- <figure> é uma "moldura" que junta a foto e a legenda dela.
+           <img> mostra a imagem. Ela não tem tag de fechamento.
            src = onde está o arquivo da imagem
-           alt = descrição da imagem (lida por leitores de tela e mostrada se a imagem não carregar) -->
-      <img src="imagens/bebe-chao.jpg" alt="Bebê de macacão verde deitado de barriga para cima num tapete no chão, movimentando-se livremente">
+           alt = descrição da imagem (lida por leitores de tela e mostrada se a imagem não carregar)
+           <figcaption> é a legenda: o texto pequeno embaixo da foto. -->
+      <figure>
+        <img src="imagens/bebe-chao.jpg" alt="Bebê de macacão verde deitado de barriga para cima num tapete no chão, movimentando-se livremente">
+        <figcaption>Imagem gerada por inteligência artificial.</figcaption>
+      </figure>
     </section>
 
     <!-- Seção com o texto autoral sobre a abordagem Pikler.
@@ -207,6 +219,63 @@
       </ul>
     </section>
 
+    <!-- Seção sobre o brincar livre com brinquedos não estruturados.
+         A foto fica de um lado e o texto do outro (o CSS arruma isso). -->
+    <section id="brincar-livre">
+      <h2>O poder do brincar livre: a importância dos brinquedos não estruturados</h2>
+
+      <div class="brincar-conteudo">
+        <!-- Coluna da esquerda: as duas fotos, uma embaixo da outra -->
+        <div class="brincar-fotos">
+          <figure>
+            <img src="imagens/brincar-livre.jpg" alt="Três bebês brincando num tapete claro no chão de uma sala de parede verde. Um segura um escorredor de metal, outro, de bruços, alcança uma bola de metal ao lado de colheres de pau e tigelas, e o terceiro mexe num lenço vermelho de bolinhas brancas. Ao fundo, cestos de palha.">
+            <figcaption>Imagem gerada por inteligência artificial.</figcaption>
+          </figure>
+          <figure>
+            <img src="imagens/brincar-livre-2.jpg" alt="Vista de cima de três bebês numa sala de parede verde e chão de madeira. Um, de bruços num tapete claro, está perto de um lenço vermelho de bolinhas e de uma colher de pau. Outro, de pé, se apoia num triângulo de escalada de madeira. O terceiro, sentado, segura um escorredor de metal. Pelo chão há blocos de madeira, tigelas de metal, colheres e caixas de papelão.">
+            <figcaption>Imagem gerada por inteligência artificial.</figcaption>
+          </figure>
+        </div>
+
+        <div>
+          <p>
+            Os brinquedos não estruturados (ou materiais de largo alcance) são objetos simples que não possuem uma função final pré-definida, comercial ou eletrónica.
+            Ao contrário de um brinquedo convencional que dita as regras da ação (como um robô que apenas anda ou pisca luzes),
+            materiais como colheres de pau, taças de metal, cestos de vime, caixas de papelão e lenços de tecido
+            exigem que o próprio bebé defina o que o objeto será.
+          </p>
+
+          <p>Na abordagem de Emmi Pikler, este tipo de exploração no chão assume um papel vital por diversos motivos:</p>
+
+          <!-- Lista com os motivos. <strong> destaca o nome de cada um. -->
+          <ul>
+            <li>
+              <strong>Estímulo à criatividade e autonomia:</strong> como o objeto não faz nada sozinho, o bebé assume o protagonismo absoluto da brincadeira.
+              Ele transforma ativamente uma simples taça num instrumento de percussão, num chapéu ou num esconderijo para o lenço.
+            </li>
+            <li>
+              <strong>Riqueza sensorial real:</strong> os materiais do quotidiano oferecem texturas, pesos e temperaturas reais.
+              Tocar no metal frio e pesado de uma bola ou escorredor ensina noções físicas muito mais ricas do que o toque homogéneo do plástico industrial.
+            </li>
+            <li>
+              <strong>Foco e investigação científica (brincadeira heurística):</strong> sem luzes artificiais e sons repetitivos que causem sobrecarga ou distrações rápidas,
+              a criança desenvolve uma atenção concentrada e prolongada. O bebé transforma-se num pequeno cientista que testa causas e efeitos:
+              "O que acontece se eu bater com esta colher aqui?" ou "Como o lenço se comporta quando o atiro?".
+            </li>
+            <li>
+              <strong>Desenvolvimento motor natural:</strong> ao serem colocados no chão com estes objetos ao seu alcance de forma segura,
+              os bebés são incentivados a rolar, rastejar e esticar-se de forma espontânea e livre, respeitando o seu próprio ritmo biológico.
+            </li>
+          </ul>
+
+          <p>
+            Oferecer materiais não estruturados significa confiar na capacidade inata da criança de aprender através da curiosidade,
+            proporcionando bases sólidas para o raciocínio lógico e para a segurança emocional.
+          </p>
+        </div>
+      </div>
+    </section>
+
     <!-- Seção de curiosidade: o lencinho da abordagem Pikler -->
     <section id="curiosidade">
       <!-- <span> é uma "etiqueta" pequena dentro do texto; aqui vira um selo escrito "Curiosidade" -->
@@ -218,8 +287,14 @@
       <div class="curiosidade-conteudo">
         <!-- Coluna da esquerda: as duas fotos, uma embaixo da outra -->
         <div class="curiosidade-fotos">
-          <img src="imagens/lenco.jpg" alt="Cesto de palha sobre um tapete no chão, com objetos de metal, uma manta e um lencinho vermelho de bolinhas brancas">
-          <img src="imagens/lenco-tapete.jpg" alt="Lencinho vermelho de bolinhas brancas, levemente amassado, sobre um tapete claro no chão">
+          <figure>
+            <img src="imagens/lenco.jpg" alt="Cesto de palha sobre um tapete no chão, com objetos de metal, uma manta e um lencinho vermelho de bolinhas brancas">
+            <figcaption>Imagem gerada por inteligência artificial.</figcaption>
+          </figure>
+          <figure>
+            <img src="imagens/lenco-tapete.jpg" alt="Lencinho vermelho de bolinhas brancas, levemente amassado, sobre um tapete claro no chão">
+            <figcaption>Imagem gerada por inteligência artificial.</figcaption>
+          </figure>
         </div>
 
         <div>
