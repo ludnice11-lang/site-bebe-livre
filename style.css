@@ -231,6 +231,17 @@ figcaption {
   }
 }
 
+/* O aviso "Cada bebê tem o seu ritmo..." em destaque:
+   numa faixa branca, em negrito, com uma linha cor de terracota na esquerda */
+#fases > p {
+  background-color: var(--branco);
+  padding: 1rem 1.5rem;                  /* espaço entre a borda da faixa e o texto */
+  border-radius: 12px;                   /* cantos arredondados */
+  border-left: 4px solid var(--terracota);
+  font-weight: 700;                      /* negrito */
+  margin-top: 0;
+}
+
 /* Cartões das abordagens: a fonte fica sempre no pé do cartão.
    display: flex + flex-direction: column empilha o conteúdo de cima para baixo;
    margin-top: auto "empurra" a fonte para o fim do cartão,
@@ -276,21 +287,72 @@ article h3 {
   margin-top: 0;
 }
 
-/* ----- LISTA "NO DIA A DIA" ----- */
+/* ----- "NO DIA A DIA": CARTÕES QUE SE MEXEM ----- */
+
+/* A lista vira uma grade com 4 cartões lado a lado */
 #dia-a-dia ul {
-  padding-left: 1.2rem;
+  list-style: none;                      /* tira as bolinhas da lista */
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 colunas iguais */
+  gap: 1.5rem;                           /* espaço entre os cartões */
 }
 
+/* Cada item da lista vira um cartão branco, igual aos das fases */
 #dia-a-dia li {
-  margin-bottom: 0.8rem;
+  background-color: var(--branco);
+  padding: 1.5rem;
+  border-radius: 16px;
+  border-top: 4px solid var(--salvia);   /* faixinha verde no topo */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  cursor: default;
+
+  /* transition = a mudança acontece aos poucos (em 0,3 segundo), e não de repente */
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
 }
 
-/* ::marker é a bolinha da lista; aqui ela fica cor de terracota */
-#dia-a-dia li::marker {
-  color: var(--terracota);
+/* :hover = quando o mouse passa por cima do cartão */
+#dia-a-dia li:hover {
+  transform: translateY(-8px);           /* o cartão sobe 8 pixels */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12); /* a sombra fica maior: parece que ele "flutua" */
+  border-top-color: var(--terracota);    /* a faixinha do topo fica cor de terracota */
+}
+
+/* O nome de cada dica ("Chão livre:", "Roupas confortáveis:"...) fica numa linha só dele,
+   como um titulozinho do cartão */
+#dia-a-dia strong {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-family: Georgia, serif;
+  font-size: 1.1rem;
+  color: var(--salvia-escuro);
+}
+
+/* Tablet: 2 cartões por linha. Celular: 1 por linha.
+   Estas regras precisam vir DEPOIS da regra dos cartões:
+   no CSS, quando duas regras mandam coisas diferentes, vale a que vem por último. */
+@media (max-width: 800px) {
+  #dia-a-dia ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  #dia-a-dia ul {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ----- BRINCAR LIVRE ----- */
+
+/* Caixa branca atrás de toda a seção (título, fotos e texto),
+   igual à caixa do texto principal */
+#brincar-livre {
+  background-color: var(--branco);
+  border-radius: 24px;                   /* cantos arredondados */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06); /* sombra bem leve */
+  padding: 3rem;                         /* espaço entre a borda da caixa e o conteúdo */
+}
 
 /* Foto e texto lado a lado: a foto ocupa 1 parte e o texto ocupa 2 partes */
 .brincar-conteudo {
