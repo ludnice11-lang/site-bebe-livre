@@ -1,25 +1,20 @@
-// =========================================================
-// BOTÃO "VOLTAR AO TOPO"
-// =========================================================
+// ===== BOTÃO VOLTAR AO TOPO =====
 
-// 1) Encontra o botão no HTML pelo id e guarda numa variável (uma "caixinha" com nome)
+// pega o botão pelo id e guarda numa variável
 const botaoTopo = document.getElementById("botao-topo");
 
-// 2) Fica "escutando" a rolagem da página.
-//    Toda vez que a pessoa rola, a função entre { } é executada.
+// toda vez q rola a pág, roda isso
 window.addEventListener("scroll", function () {
-  // window.scrollY = quantos pixels a página já foi rolada para baixo
+  // rolou + de 400px? mostra o botão
   if (window.scrollY > 400) {
-    // Rolou mais de 400px: adiciona a classe "visivel" (o CSS mostra o botão)
     botaoTopo.classList.add("visivel");
   } else {
-    // Está perto do topo: tira a classe (o CSS esconde o botão)
+    // tá lá em cima, esconde
     botaoTopo.classList.remove("visivel");
   }
 });
 
-// 3) Fica "escutando" o clique no botão
+// clicou no botão = sobe suave até o topo
 botaoTopo.addEventListener("click", function () {
-  // Rola a página até o topo (top: 0), de forma suave (smooth)
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
